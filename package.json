@@ -4,6 +4,9 @@
     "description": "P2P via HTTP",
     "version": "0.0.0",
     "main": "lib/server/index.js",
+    "scripts": {
+        "test": "node test"
+    },
     "engines": {
         "node": "~0.7.1"
     },

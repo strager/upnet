@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-var baseenc = require('../lib/util/baseenc');
+var baseenc = require('../../lib/util/baseenc');
 
 function test_from32_to16() {
     var f = baseenc.from32.to16;
@@ -34,6 +34,4 @@ function test() {
     test_fromBuffer_to16();
 }
 
-exports.test = test;
-
-test();
+require('../runner').run(test, module);
