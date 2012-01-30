@@ -11,7 +11,9 @@
         "node": "~0.7.1"
     },
     "dependencies": {
-        "node.extend": "0.0.1"
+        "node.extend": "0.0.1",
+        "q": "0.8.2",
+        "q-fs": "0.1.21"
     },
     "devDependencies": { }
 }
