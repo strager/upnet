@@ -59,3 +59,50 @@ Cryptographic hashes do just this.  When a hashing algorithm is performed on a
 resource, a constant, reproduceable identifier results.  Such algorithms have
 applications in security and data integrity, and can easily be applied to
 resource identification as well.
+
+Here, we will refer to a URN as a name for a resource determined using a
+cryptographic hash (i.e. the hash is part of the URN).  URN's have the following
+benefits over resource names such as a URL:
+
+1.  Resources cannot be forged[1].  After obtaining a resource, that resource
+    can be hashed and compared to the URN.  There is no third-party providing
+    the hashes (and thus the data integrity).
+
+    If any change is made to the resource, the resource cannot possibly have the
+    same hash[1], thus cannot have the same URN.
+
+2.  Multiple copies of a resource all have the same URN.  There are no
+    discrepencies.  This means that any copy of the resource can be used to
+    create a URN if a URN is "lost" or unknown.  This also means that all
+    resources (with or without a URN) can be given a URN which uniquely
+    identifies that resource[1].
+
+3.  Resources are not owned because URN's are not owned.  If Youtube providing a
+    resource is shut down, or the resource is removed from Youtube, the resource
+    still may be available and accessible.  Of course, if the resource was never
+    copied, the resource will be lost forever.  (If a image was made and no one
+    was around to see it, did it ever exist?)
+
+However, URN's have some fundamental problems of their own:
+
+1.  It is impossible to retrieve a resource identified by a URN without any more
+    information.
+
+2.  A changing resource cannot be described using a URN.
+
+    For example, the front page of a news blog is poorly suited for
+    cryptographic hash identification because the hash can only identify the
+    front page at one specific state.
+
+    A live radio stream is also poorly suited for a URN unless it is recorded in
+    full (or split into pieces) before it is named.
+
+3.  A URN can only describe one resource, not a collection of resources.  A URN
+    cannot describe a modern web page or web site, or a directory listing, for
+    example.
+
+4.  A URN cannot contain certain types of metadata[2], such as resource creation
+    date, original author, copyright information, or the resource's MIME type.
+
+[1] Blah blah collisions FIXME
+[2] Blah blah `kt` FIXME
