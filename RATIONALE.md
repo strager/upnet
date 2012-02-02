@@ -17,14 +17,14 @@ major flaws with this approach:
     resource name becomes invalid (or at least does not reference the resource
     intended).  This is either very unfortunate or a security risk.
 
-2.  Another resource may be have the same name as the resource.  There may be
-    30 unique resources named "`funny picture.jpeg`"; it is difficult to
-    identify which resource is desired.  Forgery of resources becomes trivial
-    because of this flaw.
+2.  Another resource may be have the same name.  There may be 30 unique
+    resources named "`funny picture.jpeg`"; it is difficult to identify which
+    resource is desired.  Forgery of resources becomes trivial because of this
+    flaw.
 
 3.  The name of the resource may change.  A Youtube video can be copied to
-    Vimeo, but remain the exact same video.  The funny picture can be renamed
-    or uploaded as-is to a different service.
+    Vimeo, but remain the exact same video.  The funny picture can be renamed or
+    uploaded as-is to a different service.
 
     If the resource under the name is changed or deleted, the desired resource
     may still exists, but only under a different name.  In addition, multiple
