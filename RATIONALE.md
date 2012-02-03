@@ -104,5 +104,49 @@ However, URN's have some fundamental problems of their own:
 4.  A URN cannot contain certain types of metadata[2], such as resource creation
     date, original author, copyright information, or the resource's MIME type.
 
-[1] Blah blah collisions FIXME
+## What works?
+
+UpNet is a piece of software which connects the accessibility of URI's and the
+sturdiness of URN's through the power of peer-to-peer networking.
+
+Technologies such as Bittorrent and Bitcoin thrive on the notion of a
+*distributed database*.  With this database, no entity owns information;
+information is shared among most or all participants of the distributed
+database.  Such a database can be used to connect *metalinks*.  A metalink can
+serve as a connection between a URI and a URN.
+
+For example, say a URN of `urn:sha1:IXPHZLXB5RDCED6OOAD2KDM3A2D3TE4M` is known,
+and the resource the URN refers to is desired.  A query of the metalink database
+may return a result of
+`https://raw.github.com/strager/upnet/9010e884c9/.gitignore` as well as a
+MD5 hash of `mg@stravvy:~/Projects/upnet` and a content length of 38 bytes.  It
+may even yield Bittorrent magnet URI's, other HTTP and FTP mirrors, and
+copyright and licensing information.
+
+UpNet has three roles in this system:
+
+1.  UpNet is an HTTP end-point for querying the distributed database.  This
+    allows existing technology build upon HTTP to utilize some of the features
+    of the distributed database.
+
+    For example, if an UpNet HTTP end-point is being hosted at
+    `http://example.com/upnet/`, a request to
+    `http://example.com/upnet/magnet:?xt=urn:sha1:IXPHZLXB5RDCED6OOAD2KDM3A2D3TE4M`
+    may result in the content being served directly.  If the server does not
+    have the resource itself available, or can for whatever reason not serve the
+    resource, it can query the distributed database for the file and redirect
+    the connecting HTTP client to another end-point or mirror.  In this example,
+    the client could be redirected to
+    `https://raw.github.com/strager/upnet/9010e884c9/.gitignore`.
+
+2.  UpNet is an implementation of the distributed database itself.
+
+    (This feature is up for debate and has not yet been decided upon or
+    finalized.)
+
+3.  UpNet allows for other, pre-existing distributed databases to be accessed.
+    The popular Gnutella network, used famously by Limewire, can be queried by
+    UpNet to allow for distributed mirroring of resource contents.
+
+[1] Blah blah collisions FIXME  
 [2] Blah blah `kt` FIXME
