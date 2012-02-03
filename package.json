@@ -13,7 +13,7 @@
     "dependencies": {
         "node.extend": "0.0.1",
         "q": "0.8.2",
-        "q-fs": "0.1.21"
+        "q-fs": "0.1.22"
     },
     "devDependencies": { }
 }
